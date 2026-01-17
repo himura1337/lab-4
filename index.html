@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота №4 - Котячий світ(оновлений)</title>
+    <title>Лабораторна робота №4 - Котячий світ (оновлений)</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -11,12 +11,21 @@
     <div class="page-wrapper">
         <header>
             <h1>Лабораторна робота №4</h1>
-            <h2>Котячий світ(оновлений)</h2>
+            <h2>Котячий світ (оновлений)</h2>
         </header>
 
         <main class="layout">
             <div class="image-block">
-                <img src="img/cat.png" alt="Рудий кіт Мурчик">
+                <img src="img/cat.png" alt="Рудий кіт Мурчик" id="main-cat">
+                
+                <div class="css-cat-container">
+                    <p>CSS-графіка:</p>
+                    <div class="css-cat">
+                        <div class="ear left"></div>
+                        <div class="ear right"></div>
+                        <div class="cat-head"></div>
+                    </div>
+                </div>
             </div>
 
             <section class="card">
@@ -26,7 +35,7 @@
                         Котики роблять наш світ м’якшим і теплішим. Вони люблять спати, 
                         муркотіти та дивитися на нас своїми великими очима.
                         <br>
-                        Руді коти — це окремий вид щастя.
+                        <strong>Руді коти — це окремий вид щастя.</strong>
                     </p>
 
                     <table>
@@ -55,5 +64,20 @@
             <p>&copy; Криськів Андрій, 2026</p>
         </footer>
     </div>
+
+    <script>
+        const catImg = document.getElementById('main-cat');
+        
+        catImg.addEventListener('click', () => {
+           
+            catImg.style.transition = "transform 0.3s ease";
+            catImg.style.transform = "scale(1.1) rotate(5deg)";
+            
+            setTimeout(() => {
+                catImg.style.transform = "scale(1) rotate(0deg)";
+                alert("Мяу! Ви активували JavaScript-анімацію!");
+            }, 300);
+        });
+    </script>
 </body>
 </html>
